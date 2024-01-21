@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/persen-template/static/css/main.845288e2.css",
+    "main.js": "/persen-template/static/js/main.10a067de.js",
+    "static/js/787.df7b7e15.chunk.js": "/persen-template/static/js/787.df7b7e15.chunk.js",
+    "index.html": "/persen-template/index.html",
+    "main.845288e2.css.map": "/persen-template/static/css/main.845288e2.css.map",
+    "main.10a067de.js.map": "/persen-template/static/js/main.10a067de.js.map",
+    "787.df7b7e15.chunk.js.map": "/persen-template/static/js/787.df7b7e15.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.845288e2.css",
+    "static/js/main.10a067de.js"
+  ]
+}
