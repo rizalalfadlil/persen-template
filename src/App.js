@@ -11,12 +11,14 @@ const App = () => {
   const [nama, setNama] = useState('');
   const [teksNama, setTeksNama] = useState(nama);
   const [hasil, setHasil] = useState(null);
-  const [color, setColor] = useState(null);
+  const [color, setColor] = useState('warning');
   const [loading, setLoading] = useState(false);
   const [teksHasil, setTeksHasil] = useState('teks');
   const [image, setImage] = useState();
 
-  const twoColors = {
+  //kalau mau ganti cepet bisa ganti semua kata sepuhnya pake find(Ctrl + f) terus replace
+
+  const twoColors = { // kode warna buat gradasi di progress bar nya
     '100%': '#FF8076',
     '0%': '#FFEA76',
   };
@@ -46,8 +48,10 @@ const App = () => {
       const categories = [
         { label: 'sepuh', image: 'sepuh.jpeg', color: 'danger' },
         { label: 'kroco', image: 'kroco.jpeg', color: 'warning' },
-        
-
+        //bisa tambah disini misalnya { label: 'inti bumi', image: 'intibumi.jpeg', color: 'dark'},
+        //urutannya 0-100 dari bawah ke atas
+        //kalau mau tambah gambar bisa disimpen di folder public
+        //warna teks nya buat yang belum tau : primary = biru, danger = merah, warning = kuning, success = hijau, dark = hitam, secondary = abu, light = putih.
       ];
     
       const category = determineCategory(persentasesepuh, categories);
@@ -73,7 +77,7 @@ const App = () => {
         onChange={(e) => setNama(e.target.value)}
         style={{ marginBottom: '16px' }}
       />
-      <Button type='primary'  disabled={nama ===''} className='rounded-pill text-bg-warning' onClick={hitungKesepuhan}>Hitung</Button>
+      <Button type=''  disabled={nama ===''} className={`border rounded-pill text-bg-${color}`} onClick={hitungKesepuhan}>Hitung</Button>
       </div>
       <div className='mt-3'>
       {loading ? (
@@ -83,8 +87,8 @@ const App = () => {
           <>
           <Progress percent={hasil} className="rounded-0" size={['default', 30]} format={(percent) => percent} strokeColor={twoColors}/>
           <div className='row fw-bold mt-2 '>
-            <span className='col text-start text-warning'>kroco</span>
-            <span className='col text-end text-warning'>sepuh</span>
+            <span className={`col text-start text-${color}`}>kroco</span>
+            <span className={`col text-end text-${color}`}>sepuh</span>
           </div>
           <h5 className='text-uppercase'>{teksNama} {hasil}%, Kamu...</h5>
           <h1 className={`text-${color} fw-bold`}>{teksHasil}</h1>
